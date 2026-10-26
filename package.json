@@ -1,0 +1,21 @@
+{
+  "name": "runbookarena-genlayer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test tests/*.test.mjs",
+    "test:contract": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "plan": "node scripts/live-test.mjs --plan",
+    "verify": "node scripts/verify-evidence.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8",
+    "@noble/hashes": "1.8.0"
+  },
+  "devDependencies": {
+    "vite": "7.3.7"
+  }
+}

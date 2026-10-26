@@ -1,0 +1,10 @@
+import {fileURLToPath} from 'node:url';import {test} from 'node:test';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';
+import {advance,verifyDrill,stateDigest,digest} from '../lib/model.js';
+const fixture=()=>JSON.parse(execFileSync('python3',[fileURLToPath(new URL('./drill-fixture.py',import.meta.url))],{encoding:'utf8'}));
+test('Python contract history independently replays in JavaScript',()=>{const r=fixture();assert.deepEqual(verifyDrill(r),{events:6,status:'RECOVERED',elapsed:7});assert.equal(r.state_digest,stateDigest(r));});
+test('mutated history is rejected',()=>{const r=fixture();r.events[0].applied=true;assert.throws(()=>verifyDrill(r),/history/);});
+test('rewriting both a denied event and its hash still fails deterministic replay',()=>{const r=fixture(),e=r.events[0];e.applied=true;const {digest:old,...body}=e;e.digest=digest(body);assert.throws(()=>verifyDrill(r),/transition/);});
+test('a changed scenario cannot reuse the certificate',()=>{const r=fixture();r.scenario.time_budget=100;assert.throws(()=>verifyDrill(r),/digest/);});
+test('a final state cannot be substituted',()=>{const r=fixture();r.state.elapsed=0;r.state_digest=stateDigest(r);assert.throws(()=>verifyDrill(r),/replayed state/);});
+test('exact boundary successful action at minute 10 remains recovered',()=>{const r=fixture(),state=structuredClone(r.events.at(-1).before);state.elapsed=9;const a=advance(state,'RESTORE','COMMANDER',r.scenario);assert.equal(a.state.status,'RECOVERED');assert.equal(a.state.elapsed,10);});
+test('wrong role cannot apply rollback',()=>{const r=fixture();const s=structuredClone(r.events[3].before);s.turn='RESPONDER';const a=advance(s,'ROLLBACK','RESPONDER',r.scenario);assert.equal(a.reason,'ACTION_ROLE');assert.equal(a.applied,false);});

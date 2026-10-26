@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "chainId": 61999,
+  "contractAddress": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+  "contractSourceSha256": "160a126d768de5def571ff85e19649336041b1259bb604952ebf7c2ff6325d52",
+  "transactions": [
+    {
+      "label": "outsider-rejected",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x3D9A90d4B00F1e85f96F50907Ebf72aEa6384Ea7",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "211468dfae106a0ac8e24f3fc6727c987b67decb77f5c9d21e38ad5e5aaf6455",
+          "Inspect the error dashboard."
+        ],
+        "value": "0",
+        "leaderOnly": false,
+        "expectedRollback": "Only the assigned drill participants may act"
+      },
+      "intendedAt": "2026-10-26T10:51:41.922Z",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "hash": "0x07cdc270188a4dd6f52d23488009185824e8d26dfcbb8e249238883aabc7dc36",
+      "submittedAt": "2026-10-26T10:51:43.924Z",
+      "executionResult": "ERROR",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x5D9Ee6E9aAF2F0b739314A52dd9Da57cd8866dA8": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "idle"
+      },
+      "createdAt": "2026-10-26T10:51:43.707749+00:00",
+      "observedAt": "2026-10-26T10:51:55.406Z",
+      "expectedFailure": true,
+      "expectedRollbackVerified": true,
+      "decodedRollback": "Only the assigned drill participants may act",
+      "leaderResultStatus": "rollback",
+      "outcome": "EXPECTED_REJECTION"
+    }
+  ],
+  "notice": "Expected rejection remains failed execution, not a successful drill action."
+}

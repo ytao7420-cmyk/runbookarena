@@ -1,0 +1,27 @@
+{
+  "deployed": true,
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+  "sourceSha256": "160a126d768de5def571ff85e19649336041b1259bb604952ebf7c2ff6325d52",
+  "deploymentTransaction": "0xf8659e4e969754d0431902e688eeb9a1762faa224234a1be341f9652b1c6e526",
+  "deploymentReceipt": {
+    "status": "ACCEPTED",
+    "execution": "SUCCESS",
+    "executionResult": "SUCCESS",
+    "consensusResult": "MAJORITY_AGREE",
+    "leaderOnly": false,
+    "votes": {
+      "0x007d6451555Df7765c707284F844137927aE4e5E": "idle",
+      "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "idle",
+      "0x5D9Ee6E9aAF2F0b739314A52dd9Da57cd8866dA8": "agree",
+      "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+      "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree"
+    },
+    "createdAt": "2026-10-26T10:03:54.308335+00:00",
+    "observedAt": "2026-10-26T10:04:01.709Z"
+  },
+  "notice": "Synthetic collaborative drill. No real infrastructure, money or prizes. Project-controlled test actors."
+}

@@ -1,0 +1,568 @@
+{
+  "verified": true,
+  "recordedAt": "2026-10-26T10:08:22.674Z",
+  "chainId": 61999,
+  "network": "GenLayer Studionet",
+  "contractAddress": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+  "contractSourceSha256": "160a126d768de5def571ff85e19649336041b1259bb604952ebf7c2ff6325d52",
+  "notice": "Synthetic collaborative drill. No real infrastructure, money or prizes. Project-controlled test actors.",
+  "actors": {
+    "commander": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+    "responder": "0x9Bf0109Ed73a0075C4c7bA1D231fD89fFA7EA094",
+    "outsider": "0x3D9A90d4B00F1e85f96F50907Ebf72aEa6384Ea7"
+  },
+  "drills": [
+    {
+      "commander": "0x18fc91a064133035d6019b182b307e9b0c778dad",
+      "events": [
+        {
+          "actor": "0x18fc91a064133035d6019b182b307e9b0c778dad",
+          "after": {
+            "elapsed": 1,
+            "flags": {
+              "inspect": false,
+              "isolate": false,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "applied": false,
+          "base_digest": "8e3e00cc7c1968acaf1a6d0245284334ec955404f3c04a109325519bc39beb66",
+          "before": {
+            "elapsed": 0,
+            "flags": {
+              "inspect": false,
+              "isolate": false,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "digest": "313001a0a96816e81b0136323be110a2bf9c3f6199cc5b13169aac7367ed6e64",
+          "instruction": "Restore traffic now.",
+          "number": 1,
+          "previous_event": null,
+          "reason": "NEEDS_VERIFICATION",
+          "role": "COMMANDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "RESTORE",
+            "card_quote": "Restore synthetic traffic only after the smoke tests have passed.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Restore traffic now.",
+            "reason": "The instruction explicitly requests the restoration of traffic, which directly maps to the RESTORE card."
+          }
+        },
+        {
+          "actor": "0x18fc91a064133035d6019b182b307e9b0c778dad",
+          "after": {
+            "elapsed": 2,
+            "flags": {
+              "inspect": true,
+              "isolate": false,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "RESPONDER"
+          },
+          "applied": true,
+          "base_digest": "c8500788bfe43af876c861bcf735f18cd0e9186a66b4f81ff26dc4a710532bae",
+          "before": {
+            "elapsed": 1,
+            "flags": {
+              "inspect": false,
+              "isolate": false,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "digest": "bfaf8eb5124c9a9598d7b509da76998cae423b57f34a2c9436e801cde5361b79",
+          "instruction": "Inspect the current error dashboard and deployment metadata.",
+          "number": 2,
+          "previous_event": "313001a0a96816e81b0136323be110a2bf9c3f6199cc5b13169aac7367ed6e64",
+          "reason": "APPLIED",
+          "role": "COMMANDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "INSPECT",
+            "card_quote": "Inspect the error dashboard and deployment metadata.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Inspect the current error dashboard and deployment metadata.",
+            "reason": "The instruction explicitly requests inspection of the error dashboard and deployment metadata, which directly matches the INSPECT card's defined scope of observing those resources without changing traffic or fixing the service."
+          }
+        },
+        {
+          "actor": "0x9bf0109ed73a0075c4c7ba1d231fd89ffa7ea094",
+          "after": {
+            "elapsed": 3,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "applied": true,
+          "base_digest": "f664f9ea3b726173e13c23fb27adf0ee32c12f0467aba93a61680b24251e7dfb",
+          "before": {
+            "elapsed": 2,
+            "flags": {
+              "inspect": true,
+              "isolate": false,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "RESPONDER"
+          },
+          "digest": "2fd7bb4d15a53c30d84708b544725aec3707eada6701ce486e4d75585682712b",
+          "instruction": "Enable maintenance mode to isolate incoming writes.",
+          "number": 3,
+          "previous_event": "bfaf8eb5124c9a9598d7b509da76998cae423b57f34a2c9436e801cde5361b79",
+          "reason": "APPLIED",
+          "role": "RESPONDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "ISOLATE",
+            "card_quote": "Isolate incoming writes by enabling synthetic maintenance mode before attempting a rollback.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Enable maintenance mode to isolate incoming writes.",
+            "reason": "The instruction directly requests enabling maintenance mode to isolate incoming writes, matching the ISOLATE card."
+          }
+        },
+        {
+          "actor": "0x18fc91a064133035d6019b182b307e9b0c778dad",
+          "after": {
+            "elapsed": 5,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": true,
+              "verify": false
+            },
+            "rollback_tokens": 0,
+            "status": "ACTIVE",
+            "turn": "RESPONDER"
+          },
+          "applied": true,
+          "base_digest": "8c63a9dc505a8562e852489fa0e9b7ecb893a5e2c5946cbe9d9c4e4d1a0e5ccb",
+          "before": {
+            "elapsed": 3,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": false,
+              "verify": false
+            },
+            "rollback_tokens": 1,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "digest": "5d1d3aff8eaae3179b86ee7e889df56c35a41c58505637e64c9966634260e1f0",
+          "instruction": "Roll back the synthetic application to the previous known-good version.",
+          "number": 4,
+          "previous_event": "2fd7bb4d15a53c30d84708b544725aec3707eada6701ce486e4d75585682712b",
+          "reason": "APPLIED",
+          "role": "COMMANDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "ROLLBACK",
+            "card_quote": "Roll back the synthetic application to the previous known-good version after inspection and isolation.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Roll back the synthetic application to the previous known-good version.",
+            "reason": "Exact match to the single explicit request in the instruction."
+          }
+        },
+        {
+          "actor": "0x9bf0109ed73a0075c4c7ba1d231fd89ffa7ea094",
+          "after": {
+            "elapsed": 6,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": true,
+              "verify": true
+            },
+            "rollback_tokens": 0,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "applied": true,
+          "base_digest": "0cc42153e08666da3a542178a83f7f84ea6e9457c6e8edb0a135f9465724dc51",
+          "before": {
+            "elapsed": 5,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": true,
+              "verify": false
+            },
+            "rollback_tokens": 0,
+            "status": "ACTIVE",
+            "turn": "RESPONDER"
+          },
+          "digest": "e92db18f724492e0b9c5990faa51a384ba514d13a1fd9d7886ad9a1fb8d135cf",
+          "instruction": "Run smoke tests to verify the rolled-back version works.",
+          "number": 5,
+          "previous_event": "5d1d3aff8eaae3179b86ee7e889df56c35a41c58505637e64c9966634260e1f0",
+          "reason": "APPLIED",
+          "role": "RESPONDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "VERIFY",
+            "card_quote": "Run synthetic smoke tests after rollback and verify the previous version works.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Run smoke tests to verify the rolled-back version works.",
+            "reason": "The instruction explicitly requests running smoke tests to verify the version, which directly matches the definition of the VERIFY card."
+          }
+        },
+        {
+          "actor": "0x18fc91a064133035d6019b182b307e9b0c778dad",
+          "after": {
+            "elapsed": 7,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": true,
+              "rollback": true,
+              "verify": true
+            },
+            "rollback_tokens": 0,
+            "status": "RECOVERED",
+            "turn": "RESPONDER"
+          },
+          "applied": true,
+          "base_digest": "5b2554ac23bd9ffcb3e00048f6cec520f0c593721eeccdcde3a6236f3411d4d1",
+          "before": {
+            "elapsed": 6,
+            "flags": {
+              "inspect": true,
+              "isolate": true,
+              "restore": false,
+              "rollback": true,
+              "verify": true
+            },
+            "rollback_tokens": 0,
+            "status": "ACTIVE",
+            "turn": "COMMANDER"
+          },
+          "digest": "92a45888f738413d9bc344946b5be3064aec4746d6bddcb6b8735dd08c541b97",
+          "instruction": "Restore the synthetic traffic after verification.",
+          "number": 6,
+          "previous_event": "e92db18f724492e0b9c5990faa51a384ba514d13a1fd9d7886ad9a1fb8d135cf",
+          "reason": "APPLIED",
+          "role": "COMMANDER",
+          "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+          "semantics": {
+            "action": "RESTORE",
+            "card_quote": "Restore synthetic traffic only after the smoke tests have passed.",
+            "certainty": "EXPLICIT",
+            "instruction_quote": "Restore the synthetic traffic after verification.",
+            "reason": "The instruction explicitly requests restoring synthetic traffic. It is a single clear action; the timing condition does not change the intended action."
+          }
+        }
+      ],
+      "id": "runbook-20261026-v1",
+      "notice": "Synthetic exercise; no real service, measured recovery, money or prizes. Actor wallets may be controlled by one developer.",
+      "responder": "0x9bf0109ed73a0075c4c7ba1d231fd89ffa7ea094",
+      "scenario": {
+        "brief": "Synthetic checkout service: elevated errors follow a bad deployment. Inspection, write isolation, rollback, smoke verification and traffic restoration are separate actions. No real system is connected. Each attempted action consumes simulated time; the team has 10 minutes and one rollback token.",
+        "cards": {
+          "INSPECT": "Inspect the error dashboard and deployment metadata. Observation only; it does not change traffic or fix the service.",
+          "ISOLATE": "Isolate incoming writes by enabling synthetic maintenance mode before attempting a rollback.",
+          "RESTORE": "Restore synthetic traffic only after the smoke tests have passed.",
+          "ROLLBACK": "Roll back the synthetic application to the previous known-good version after inspection and isolation.",
+          "VERIFY": "Run synthetic smoke tests after rollback and verify the previous version works. This does not restore traffic."
+        },
+        "costs": {
+          "INSPECT": 1,
+          "ISOLATE": 1,
+          "RESTORE": 1,
+          "ROLLBACK": 2,
+          "VERIFY": 1
+        },
+        "roles": {
+          "INSPECT": "COMMANDER",
+          "ISOLATE": "RESPONDER",
+          "RESTORE": "COMMANDER",
+          "ROLLBACK": "COMMANDER",
+          "VERIFY": "RESPONDER"
+        },
+        "rollback_tokens": 1,
+        "time_budget": 10,
+        "version": "checkout-rollback-v1"
+      },
+      "scenario_digest": "2852f77865e3c403a6af24995524e8e85cfa70cc9e72f1359ea5dcf4ac6ee63f",
+      "state": {
+        "elapsed": 7,
+        "flags": {
+          "inspect": true,
+          "isolate": true,
+          "restore": true,
+          "rollback": true,
+          "verify": true
+        },
+        "rollback_tokens": 0,
+        "status": "RECOVERED",
+        "turn": "RESPONDER"
+      },
+      "state_digest": "211468dfae106a0ac8e24f3fc6727c987b67decb77f5c9d21e38ad5e5aaf6455"
+    }
+  ],
+  "transactions": [
+    {
+      "label": "start",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+        "method": "start_drill",
+        "args": [
+          "runbook-20261026-v1",
+          "0x9Bf0109Ed73a0075C4c7bA1D231fD89fFA7EA094"
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:04:02.695Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0x5407ca26859c92aac519222be472172ed628d96d8e919d0d5ff5339bf0f52420",
+      "submittedAt": "2026-10-26T10:04:04.383Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "agree"
+      },
+      "createdAt": "2026-10-26T10:04:04.159454+00:00",
+      "observedAt": "2026-10-26T10:08:09.721Z"
+    },
+    {
+      "label": "early-restore",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "8e3e00cc7c1968acaf1a6d0245284334ec955404f3c04a109325519bc39beb66",
+          "Restore traffic now."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:04:12.376Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0xb443d3c3eabd263bf1139b641c13b286e37961c16fb642bb8d92a7e7913a6ccd",
+      "submittedAt": "2026-10-26T10:04:14.026Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "disagree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "disagree"
+      },
+      "createdAt": "2026-10-26T10:04:13.799845+00:00",
+      "observedAt": "2026-10-26T10:08:11.573Z"
+    },
+    {
+      "label": "inspect",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "c8500788bfe43af876c861bcf735f18cd0e9186a66b4f81ff26dc4a710532bae",
+          "Inspect the current error dashboard and deployment metadata."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:05:06.243Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0x0e4f71f6884065dc6e427b4b81962aabc07b56720946a37260294aad595b81e9",
+      "submittedAt": "2026-10-26T10:05:08.333Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "agree",
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "idle",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle"
+      },
+      "createdAt": "2026-10-26T10:05:07.748812+00:00",
+      "observedAt": "2026-10-26T10:08:13.755Z"
+    },
+    {
+      "label": "isolate",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x9Bf0109Ed73a0075C4c7bA1D231fD89fFA7EA094",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "f664f9ea3b726173e13c23fb27adf0ee32c12f0467aba93a61680b24251e7dfb",
+          "Enable maintenance mode to isolate incoming writes."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:05:57.753Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0x5f06c7cc46a80e352927ad734d8675de317937f2f309a28a2b7422a1de1ec171",
+      "submittedAt": "2026-10-26T10:05:59.600Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "idle",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "idle"
+      },
+      "createdAt": "2026-10-26T10:05:59.267621+00:00",
+      "observedAt": "2026-10-26T10:08:15.938Z"
+    },
+    {
+      "label": "rollback",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "8c63a9dc505a8562e852489fa0e9b7ecb893a5e2c5946cbe9d9c4e4d1a0e5ccb",
+          "Roll back the synthetic application to the previous known-good version."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:06:14.928Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0xcef231cd9de9a92a7e09fe3d9b6c8f82c80302837696b3647a0110401ca4aaef",
+      "submittedAt": "2026-10-26T10:06:17.734Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "agree",
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "idle",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "idle"
+      },
+      "createdAt": "2026-10-26T10:06:16.843604+00:00",
+      "observedAt": "2026-10-26T10:08:18.146Z"
+    },
+    {
+      "label": "verify",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x9Bf0109Ed73a0075C4c7bA1D231fD89fFA7EA094",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "0cc42153e08666da3a542178a83f7f84ea6e9457c6e8edb0a135f9465724dc51",
+          "Run smoke tests to verify the rolled-back version works."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:07:03.630Z",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "hash": "0xd2ee852b992eb1395f5caa90b8c3bbcf3c76e3c8ff7179c0af9f31110e78171d",
+      "submittedAt": "2026-10-26T10:07:05.429Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "agree",
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "disagree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "idle",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree"
+      },
+      "createdAt": "2026-10-26T10:07:05.128811+00:00",
+      "observedAt": "2026-10-26T10:08:20.336Z"
+    },
+    {
+      "label": "restore",
+      "spec": {
+        "kind": "call",
+        "address": "0x3b0f631aE7Aacaf418212B7dE1974922aA7Fef02",
+        "actor": "0x18Fc91a064133035D6019b182B307E9B0C778Dad",
+        "method": "attempt",
+        "args": [
+          "runbook-20261026-v1",
+          "5b2554ac23bd9ffcb3e00048f6cec520f0c593721eeccdcde3a6236f3411d4d1",
+          "Restore the synthetic traffic after verification."
+        ],
+        "value": "0",
+        "leaderOnly": false
+      },
+      "intendedAt": "2026-10-26T10:07:32.820Z",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "hash": "0x42211675860f67022b4300ab51b190e3f543403d4adbbe2c0526679ed50265d9",
+      "submittedAt": "2026-10-26T10:07:35.563Z",
+      "executionResult": "SUCCESS",
+      "consensusResult": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "votes": {
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "disagree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "disagree"
+      },
+      "createdAt": "2026-10-26T10:07:34.937451+00:00",
+      "observedAt": "2026-10-26T10:08:22.663Z"
+    }
+  ]
+}
